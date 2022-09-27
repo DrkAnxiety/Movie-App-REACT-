@@ -1,0 +1,16 @@
+.cardContainer {
+  width: 25em;
+  min-height: max-content;
+  border: 2px solid red;
+}
+
+.cardContent {
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+}
+
+.cardContent img {
+  border-radius: 1em;
+  width: 100%;
+}
