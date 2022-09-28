@@ -1,0 +1,78 @@
+.headerContainer {
+  width: 100%;
+  min-height: 3em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5em 4em;
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.59);
+  -webkit-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.59);
+}
+
+.logoContainer {
+  font-size: 3em;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainLogo {
+  color: red;
+  font-size: 1.5em;
+  animation: animation-logo 4s linear infinite;
+}
+
+@keyframes animation-logo {
+  0% {
+    color: #6464ec;
+  }
+  20% {
+    color: #64b1ec;
+  }
+  40% {
+    color: #64e5ec;
+  }
+  60% {
+    color: #64e5ec;
+  }
+  80% {
+    color: #64b1ec;
+  }
+  100% {
+    color: #6464ec;
+  }
+}
+
+.searchContainer {
+  display: flex;
+  min-width: max-content;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 0.5em;
+}
+
+.logoHomeContainer {
+  font-size: 2em;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.logoHomeContainer:hover {
+  transform: scale(1.12);
+  color: #b2d9fc;
+}
+
+.inputSearch {
+  width: 25em;
+  border: none;
+  outline: none;
+  border-radius: 1em;
+  padding: 0.4em 0 0.4em 1em;
+  font-size: 1.5em;
+}
