@@ -7,8 +7,7 @@ function App() {
   return (
     <div className={styles.app}>
       <header>
-        <Link to='/'>Home</Link>
-        <Link to='/movie'>Movie</Link>
+        <Link to='/'>Home LOGO</Link>
       </header>
       <main>
         <Routes>

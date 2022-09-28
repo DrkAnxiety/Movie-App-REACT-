@@ -2,7 +2,7 @@ import styles from '../stylesheets/MovieCard.module.css'
 import { Link } from 'react-router-dom'
 
 export const MovieCard = ({ movie }) => {
-  const IMG_URL = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
+  const IMG_URL = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
 
   return (
     <div className={styles.cardContainer}>

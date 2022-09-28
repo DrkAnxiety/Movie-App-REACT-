@@ -27,9 +27,9 @@ export const ListMovies = () => {
 
   return (
     <article className={styles.moviesContainer}>
-      {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+        {movies.map((movie) => (
+            <MovieCard  key={movie.id} movie={movie} />
+        ))}
     </article>
   )
 }
