@@ -1,18 +1,54 @@
 .cardContainer {
-  width: 18em;
+  width: 18.5em;
+  min-height: max-content;
+  border-radius: 2em;
+  padding: 1em;
 }
 
 .cardContent {
   width: 100%;
   height: 100%;
-  /* padding: 1em; */
+  display: inline-block;
+  border: 0.4em solid transparent;
+  border-radius: 1.4em;
+  transition: .4s;
+}
+
+.cardContent:hover {
+  border: 0.4em solid #fff;
+  opacity: 0.8;
 }
 
 .cardContent img {
-  border-radius: 1em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
   width: 100%;
 }
 
-.cardContent img:hover {
-  opacity: 0.8;
+
+.descCardContent {
+  display: flex;
+  padding: 1em;
+  border-end-end-radius: 1em;
+  border-bottom-left-radius: 1em;
+  background: #67ff;
+  margin-top: -0.5em;
+}
+
+.descCardContent h2 {
+  width: 75%;
+  text-align: left;
+}
+
+.descCardContent p{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  gap: 0.3em;
+}
+
+.starLogoContainer {
+  color: #ffbf00;
 }

@@ -6,6 +6,7 @@ import { TbLetterO } from 'react-icons/tb'
 import { TbLetterV } from 'react-icons/tb'
 import { TbLetterI } from 'react-icons/tb'
 import { TbLetterE } from 'react-icons/tb'
+import { FiSearch } from 'react-icons/fi'
 
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
@@ -31,6 +32,8 @@ export const Header = () => {
             <Home className={style.logoHomeContainer} />
           </div>
         </Link>
+        <div className={style.inputAndIconContainer}>
+          <FiSearch className={style.searchIcon}/>
         <input
           type='text'
           className={style.inputSearch}
@@ -38,6 +41,7 @@ export const Header = () => {
           value={movieName}
           onChange={(e) => setMovieName(e.target.value)}
         />
+        </div>
       </div>
     </header>
   )

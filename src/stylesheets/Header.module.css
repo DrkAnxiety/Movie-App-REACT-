@@ -57,6 +57,18 @@
   margin-bottom: 0.5em;
 }
 
+.homeButtonContainer {
+background-color: #000;
+  width: 3em;
+  border-radius: 50%;
+  padding: 0.3em;
+  transition: .4s ;
+}
+
+.homeButtonContainer:hover {
+  transform: scale(1.10);
+}
+
 .logoHomeContainer {
   font-size: 2em;
   color: #fff;
@@ -64,15 +76,31 @@
 }
 
 .logoHomeContainer:hover {
-  transform: scale(1.12);
   color: #b2d9fc;
+}
+
+.inputAndIconContainer {
+  padding: 0.5em 1em;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: 2em;
+}
+
+.searchIcon {
+  color: #fff;
+  font-size: 1.7em;
 }
 
 .inputSearch {
   width: 25em;
+  background-color: #000;
   border: none;
+  color: #fff;
   outline: none;
   border-radius: 1em;
   padding: 0.4em 0 0.4em 1em;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }

@@ -1,0 +1,67 @@
+.detailsCardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailsCardContent {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.posterContainer {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2em;
+}
+
+.posterContainer img {
+  width: 25em;
+  border-radius: 1em;
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.59);
+  -webkit-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.59);
+}
+.descriptionContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2em;
+  gap: 0.8em;
+}
+
+.commentConent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.commentConent h2 {
+  font-size: 2.2em;
+  color: #fff;
+}
+
+.commentConent p {
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.overviewConent {
+  text-align: left;
+}
+
+.overviewConent h2 {
+  font-size: 2em;
+  color: #fff;
+}
+
+.overviewConent p {
+  font-size: 1.2em;
+  color: #fff;
+}
