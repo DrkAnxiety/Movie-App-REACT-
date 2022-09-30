@@ -1,12 +1,16 @@
-/* ===== Stilos del contenedo de la peliculas ===== */
+/* ===== Stilos del contenido de la peliculas ===== */
 .moviesContainer {    
   padding: 2em;
-  display: grid;
+  /* display: grid;
   gap: 1em; 
   grid-template-columns: repeat(auto-fill, 20em);
   justify-content: space-evenly;
+  align-items: center; */
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  position: relative;
+  justify-content: center;
+  justify-items: flex-start;
 }
 
 @media (max-width: 56em) {

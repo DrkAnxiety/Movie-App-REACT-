@@ -68,7 +68,7 @@
 }
 
 .bannerContainer {
-  width: 75em;
+  width: 85%;
   object-fit: cover;
   position: absolute;
   left: 6em;

@@ -14,7 +14,7 @@ export const MovieCard = ({ movie }) => {
             className={styles.cardImgContainer}
           />
           <div className={styles.descCardContent}>
-            <h2>{movie.title}</h2>
+            <h2>{movie.title ? movie.title: movie.name}</h2>
             <p>
               {movie.vote_average}
               <AiTwotoneStar className={styles.starLogoContainer} />

@@ -1,35 +1,48 @@
 import { useState, useEffect } from 'react'
+import { Get } from '../resources/Service'
 import styles from '../stylesheets/ListMovies.module.css'
 import { MovieCard } from './MovieCard'
+import { Spinner } from './Spinner'
 
-export const ListMovies = () => {
-  const URL_API = 'https://api.themoviedb.org/3/discover/movie/'
-  const HEADER = {
-    headers: {
-      Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZTk3YzEyNzQzZmFkZmVjMTEzNmUwMWQ5YTRkNDE2MCIsInN1YiI6IjYyYmU2MmI3ZmJhNjI1MDBlYTMyNDI1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.QHZysOoZj2GSL-0zIe4h4V37u8sMxlOCw12ploQNGTA',
-      'Content-Type': 'application/json;charset=utf-8',
-    },
-  }
-
+export const ListMovies = ({ movieName }) => {
   const [movies, setMovies] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    fetch(URL_API, HEADER)
-      .then((resp) => resp.json())
-      .then((data) => {
-        {
-          console.log('Peticion Completada :)')
-          setMovies(data.results)
-        }
-      })
-  }, [])
+    setIsLoading(true)
+    const URL_MOVIE = movieName
+      ? `/search/movie?query=${movieName}`
+      : `/discover/movie`
+
+    Get(URL_MOVIE).then((data) => {
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 1000)
+      setMovies(data.results)
+      console.log(data.results)
+    })
+
+
+
+    /**
+        const URL_TV = movieName ? `/search/tv?query=${movieName}` : `/discover/tv`
+        Get(URL_TV).then((data) => {
+          setTimeout(() => {
+            setIsLoading(false)
+          }, 1000)
+            setMovies((prev) => prev.concat(data.results))
+            console.log(data.results)
+        })
+     */
+  }, [movieName])
 
   return (
     <article className={styles.moviesContainer}>
-        {movies.map((movie) => (
-            <MovieCard  key={movie.id} movie={movie} />
-        ))}
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
+      )}
     </article>
   )
 }

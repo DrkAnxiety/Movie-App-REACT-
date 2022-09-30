@@ -1,0 +1,53 @@
+.homeButtonContainer {
+  background-color: #000;
+  width: 3em;
+  height: max-content;
+  border-radius: 30em;
+  padding: 0.65em;
+  transition: 0.5s;
+}
+
+.homeButtonContainer:hover {
+  transform: scale(1.1);
+  background-color: transparent;
+  /* border: 0.1em solid #fff; */
+}
+
+.logoHomeContainer {
+  font-size:1.5em;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.inputContainer {
+  padding: 0.5em 1em;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: 2em;
+}
+
+.searchIcon {
+  color: #fff;
+  font-size: 1.7em;
+}
+
+.inputSearch {
+  width: 15em;
+  background-color: #000;
+  border: none;
+  color: #fff;
+  outline: none;
+  border-radius: 1em;
+  padding: 0.4em 0 0.4em 1em;
+  font-size: 1.2em;
+}

@@ -5,9 +5,13 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { Header } from './components/Header'
 
 function App() {
+  const handleOnChange = () => {
+    console.log('Typing');
+  }
+
   return (
     <div className={styles.app}>
-      <Header />
+      <Header handleOnChange={handleOnChange}/>
 {/*       
       <header>
         <Link to='/'>Home LOGO</Link>
