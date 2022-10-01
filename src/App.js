@@ -12,10 +12,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Header handleOnChange={handleOnChange}/>
-{/*       
-      <header>
-        <Link to='/'>Home LOGO</Link>
-      </header> */}
+      
       <main>
         <Routes>
           <Route path='/' element={<HomePage />} />

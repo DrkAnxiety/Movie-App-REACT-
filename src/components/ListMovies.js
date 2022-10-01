@@ -1,43 +1,39 @@
-import { useState, useEffect } from 'react'
-import { Get } from '../resources/Service'
-import styles from '../stylesheets/ListMovies.module.css'
-import { MovieCard } from './MovieCard'
 import { Spinner } from './Spinner'
+import { MovieCard } from './MovieCard'
+import { Get } from '../resources/Service'
+import { useState, useEffect } from 'react'
+import styles from '../stylesheets/ListMovies.module.css'
 
-export const ListMovies = ({ movieName }) => {
+export const ListMovies = ({ movieName, suggestion }) => {
   const [movies, setMovies] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    setIsLoading(true)
-    const URL_MOVIE = movieName
-      ? `/search/movie?query=${movieName}`
-      : `/discover/movie`
+  const URL = () => {
+    if(movieName || suggestion){
+      if(movieName){
+        return `/search/movie?query=${movieName}`
+      } else {
+        return `/search/movie?query=${suggestion}`
+      }
+    } else {
+      return `/discover/movie`
+    }
+  }
 
+  useEffect(() => {
+    const URL_MOVIE = URL()
+
+    setIsLoading(true)
     Get(URL_MOVIE).then((data) => {
       setTimeout(() => {
         setIsLoading(false)
       }, 1000)
       setMovies(data.results)
-      console.log(data.results)
     })
-
-
-
-    /**
-        const URL_TV = movieName ? `/search/tv?query=${movieName}` : `/discover/tv`
-        Get(URL_TV).then((data) => {
-          setTimeout(() => {
-            setIsLoading(false)
-          }, 1000)
-            setMovies((prev) => prev.concat(data.results))
-            console.log(data.results)
-        })
-     */
-  }, [movieName])
+  }, [movieName, suggestion])
 
   return (
-    <article className={styles.moviesContainer}>
+    <article className={isLoading ? styles.moviesContainerSpinner: styles.moviesContainer}>
       {isLoading ? (
         <Spinner />
       ) : (
